@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>JoyX — Browser Flasher & Live USB Tuner</title>
+</head>
+<body>
+<div id="app"></div>
+<script type="module">
+  import { mountEsp32BotFlasher } from "https://esp32-tools.github.io/tools/flasher.js";
+
+  mountEsp32BotFlasher({
+    target: "#app",
+    name: "JoyX",
+    description: "Plug your M5StickC Plus / JoyC remote into USB and click Flash. No software or drivers required.",
+    repo: "esp32-bot/JoyX",
+    manifestBase: "fw",
+    actions: [
+      { label: "Status", cmd: "status" },
+      { label: "Beep", cmd: "beep" },
+      { label: "Reboot", cmd: "reboot" },
+    ],
+  });
+</script>
+</body>
+</html>
